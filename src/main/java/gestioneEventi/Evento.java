@@ -5,21 +5,17 @@ import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "eventi")
 
 public class Evento {
-
-	// id (chiave primaria)
-	// titolo
-	// dataEvento
-	// descrizione
-	// tipoEvento [PUBBLICO, PRIVATO]
-	// numeroMassimoPartecipanti
 
 	@Id
 	// @GeneratedValue
