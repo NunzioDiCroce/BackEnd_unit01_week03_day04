@@ -5,11 +5,6 @@ import javax.persistence.EntityTransaction;
 
 public class EventoDAO {
 
-	// save
-	// getById
-	// delete
-	// refresh
-
 	private final EntityManager entityManager;
 
 	public EventoDAO(EntityManager _entityManager) {
