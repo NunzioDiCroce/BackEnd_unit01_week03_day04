@@ -50,4 +50,8 @@ public class EventoDAO {
 
 	}
 
+	// - - - - - - - - - - - - - - - - getConcertiInStreaming(true/false)
+
+	// - - - - - - - - - - - - - - - - getConcertiPerGenere(List<GenereConcerto>)
+
 }

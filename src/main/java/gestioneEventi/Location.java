@@ -1,8 +1,10 @@
 package gestioneEventi;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,8 +19,8 @@ public class Location {
 	private String nome;
 	private String citta;
 
-	@OneToOne(mappedBy = "location")
-	private Evento evento;
+	@OneToMany(mappedBy = "location")
+	private Set<Evento> eventi;
 
 	// costruttori, getters e setters...
 	public Location() {
@@ -31,11 +33,11 @@ public class Location {
 		this.citta = _citta;
 	}
 
-	public Location(long _id, String _nome, String _citta, Evento _evento) {
+	public Location(long _id, String _nome, String _citta, Set<Evento> _eventi) {
 		this.id = _id;
 		this.nome = _nome;
 		this.citta = _citta;
-		this.evento = _evento;
+		this.eventi = _eventi;
 	}
 
 	public long getId() {
@@ -58,12 +60,12 @@ public class Location {
 		this.citta = _citta;
 	}
 
-	public Evento getEvento() {
-		return evento;
+	public Set<Evento> getEventi() {
+		return eventi;
 	}
 
-	public void setEvento(Evento _evento) {
-		this.evento = _evento;
+	public void setEventi(Set<Evento> _eventi) {
+		this.eventi = _eventi;
 	}
 
 	@Override

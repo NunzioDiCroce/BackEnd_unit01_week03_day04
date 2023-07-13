@@ -1,12 +1,9 @@
 package gestioneEventi;
 
-import javax.persistence.Id;
+import javax.persistence.Entity;
 
+@Entity
 public class PartitaDiCalcio extends Evento {
-
-	@Id
-	// @GeneratedValue
-	private long id;
 
 	private String squadraDiCasa;
 	private String squadraOspite;
@@ -18,13 +15,9 @@ public class PartitaDiCalcio extends Evento {
 
 	}
 
-	public PartitaDiCalcio(long _id, String _squadraDiCasa, String _squadraOspite, String _squadraVincente,
+	public PartitaDiCalcio(String _squadraDiCasa, String _squadraOspite, String _squadraVincente,
 			int _numeroGolSquadraDiCasa, int _numeroGolSquadraOspite) {
 
-	}
-
-	public long getId() {
-		return id;
 	}
 
 	public String getSquadraDiCasa() {
@@ -69,7 +62,7 @@ public class PartitaDiCalcio extends Evento {
 
 	@Override
 	public String toString() {
-		return "PartitaDiCalcio [ " + id + ", " + squadraDiCasa + ", " + squadraOspite + ", " + squadraVincente + ", "
+		return "PartitaDiCalcio [ " + squadraDiCasa + ", " + squadraOspite + ", " + squadraVincente + ", "
 				+ numeroGolSquadraDiCasa + ", " + numeroGolSquadraOspite + " ]";
 
 	}

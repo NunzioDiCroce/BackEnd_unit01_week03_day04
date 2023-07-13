@@ -1,12 +1,9 @@
 package gestioneEventi;
 
-import javax.persistence.Id;
+import javax.persistence.Entity;
 
+@Entity
 public class Concerto extends Evento {
-
-	@Id
-	// @GeneratedValue
-	private long id;
 
 	private Genere genere;
 	private boolean inStreaming;
@@ -15,12 +12,8 @@ public class Concerto extends Evento {
 
 	}
 
-	public Concerto(long _id, Genere _genere, boolean _inStreaming) {
+	public Concerto(Genere _genere, boolean _inStreaming) {
 
-	}
-
-	public long getId() {
-		return id;
 	}
 
 	public Genere getGenere() {
@@ -41,7 +34,7 @@ public class Concerto extends Evento {
 
 	@Override
 	public String toString() {
-		return "Concerto [ " + id + ", " + genere + ", " + inStreaming + " ]";
+		return "Concerto [ " + genere + ", " + inStreaming + " ]";
 
 	}
 

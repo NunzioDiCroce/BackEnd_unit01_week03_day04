@@ -5,6 +5,9 @@ import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -25,6 +28,10 @@ public class Persona {
 
 	@OneToMany(mappedBy = "persona")
 	private Set<Partecipazione> listaPartecipazioni;
+
+	@ManyToMany
+	@JoinTable(name = "GaraDiAtletica_Persona", joinColumns = @JoinColumn(name = "Persona_id"), inverseJoinColumns = @JoinColumn(name = "GaraDiAtletica_id"))
+	private Set<GaraDiAtletica> setGaraDiAtletica;
 
 	// costruttori, getters e setters...
 	public Persona() {

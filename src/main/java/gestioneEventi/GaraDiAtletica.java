@@ -2,15 +2,16 @@ package gestioneEventi;
 
 import java.util.Set;
 
-import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
+@Entity
 public class GaraDiAtletica extends Evento {
 
-	@Id
-	// @GeneratedValue
-	private long id;
-
-	// @OneToMany(mappedBy = "evento")
+	@ManyToMany
+	@JoinTable(name = "GaraDiAtletica_Persona", joinColumns = @JoinColumn(name = "GaraDiAtletica_id"), inverseJoinColumns = @JoinColumn(name = "Persona_id"))
 	private Set<Persona> setAtleti;
 
 	private Persona vincitore;
@@ -19,12 +20,8 @@ public class GaraDiAtletica extends Evento {
 
 	}
 
-	public GaraDiAtletica(long _id, Set<Persona> _setAtleti, Persona _vincitore) {
+	public GaraDiAtletica(Set<Persona> _setAtleti, Persona _vincitore) {
 
-	}
-
-	public long getId() {
-		return id;
 	}
 
 	public Set<Persona> getSetAtleti() {
@@ -45,7 +42,7 @@ public class GaraDiAtletica extends Evento {
 
 	@Override
 	public String toString() {
-		return "PartitaDiAtletica [ " + id + ", " + setAtleti + ", " + vincitore + " ]";
+		return "PartitaDiAtletica [ " + setAtleti + ", " + vincitore + " ]";
 
 	}
 
