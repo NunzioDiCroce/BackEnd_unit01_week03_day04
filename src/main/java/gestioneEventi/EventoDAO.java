@@ -1,7 +1,10 @@
 package gestioneEventi;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
 
 public class EventoDAO {
 
@@ -51,6 +54,12 @@ public class EventoDAO {
 	}
 
 	// - - - - - - - - - - - - - - - - getConcertiInStreaming(true/false)
+	public List<Concerto> getConcertiInStreaming(boolean _trueFalse) {
+		TypedQuery<Concerto> getConcertiInStreamingTrueQuery = entityManager
+				.createQuery("SELECT c FROM Concerto c WHERE c.inStreaming = :_trueFalse", Concerto.class);
+		return null;
+
+	}
 
 	// - - - - - - - - - - - - - - - - getConcertiPerGenere(List<GenereConcerto>)
 
