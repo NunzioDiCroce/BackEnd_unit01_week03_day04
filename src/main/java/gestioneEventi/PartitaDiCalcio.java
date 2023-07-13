@@ -18,7 +18,7 @@ public class PartitaDiCalcio extends Evento {
 
 	}
 
-	public PartitaDiCalcio(String _squadraDiCasa, String _squadraOspite, String _squadraVincente,
+	public PartitaDiCalcio(long _id, String _squadraDiCasa, String _squadraOspite, String _squadraVincente,
 			int _numeroGolSquadraDiCasa, int _numeroGolSquadraOspite) {
 
 	}
