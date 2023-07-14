@@ -1,6 +1,8 @@
 package gestioneEventi;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -23,6 +25,7 @@ public class Partecipazione {
 	@JoinColumn(name = "evento_id", referencedColumnName = "id")
 	private Evento evento;
 
+	@Enumerated(EnumType.STRING)
 	private Stato stato;
 
 	// costruttori, getters e setters...

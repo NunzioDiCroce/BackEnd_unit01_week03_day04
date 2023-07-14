@@ -1,11 +1,15 @@
 package gestioneEventi;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @Entity
 public class Concerto extends Evento {
 
+	@Enumerated(EnumType.STRING)
 	private Genere genere;
+
 	private boolean inStreaming;
 
 	public Concerto() {

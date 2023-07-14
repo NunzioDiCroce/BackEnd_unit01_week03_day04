@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -24,6 +26,8 @@ public class Persona {
 	private String cognome;
 	private String email;
 	private LocalDate dataNascita;
+
+	@Enumerated(EnumType.STRING)
 	private Sesso sesso;
 
 	@OneToMany(mappedBy = "persona")

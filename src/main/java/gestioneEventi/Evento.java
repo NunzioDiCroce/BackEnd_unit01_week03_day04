@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -25,7 +27,10 @@ public class Evento {
 	private String titolo;
 	private LocalDate dataEvento;
 	private String descrizione;
+
+	@Enumerated(EnumType.STRING)
 	private TipoEvento tipoEvento;
+
 	private int numeroMassimoPartecipanti;
 
 	@OneToMany(mappedBy = "evento")
