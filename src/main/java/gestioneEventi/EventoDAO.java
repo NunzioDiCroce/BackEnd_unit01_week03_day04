@@ -55,17 +55,17 @@ public class EventoDAO {
 
 	// - - - - - - - - - - - - - - - - getConcertiInStreaming(true/false)
 	public List<Concerto> getConcertiInStreaming(boolean _trueFalse) {
-		TypedQuery<Concerto> getConcertiInStreamingTrueQuery = entityManager
+		TypedQuery<Concerto> getConcertiInStreamingQuery = entityManager
 				.createQuery("SELECT c FROM Concerto c WHERE c.inStreaming = :_trueFalse", Concerto.class);
-		return getConcertiInStreamingTrueQuery.getResultList();
+		return getConcertiInStreamingQuery.getResultList();
 
 	}
 
 	// - - - - - - - - - - - - - - - - getConcertiPerGenere(List<GenereConcerto>)
 	public List<Concerto> getConcertiPerGenere() {
 		TypedQuery<Concerto> getConcertiPerGenereQuery = entityManager
-				.createQuery("SELECT c FROM Concerto c WHERE c.inStreaming = :_trueFalse", Concerto.class);
-		return null;
+				.createQuery("SELECT c.genere, COUNT(c) FROM Concerto GROUP BY c.genere", Concerto.class);
+		return getConcertiPerGenereQuery.getResultList();
 
 	}
 
