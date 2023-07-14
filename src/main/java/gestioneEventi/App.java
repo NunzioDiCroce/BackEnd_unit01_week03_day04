@@ -55,7 +55,7 @@ public class App {
 
 		// - - - - - - - - - - - - - - - - - - - - SETTING & SAVING
 
-		primoEvento.setLocation(primaLocation);
+		// primoEvento.setLocation(primaLocation);
 		eventoDao.save(primoEvento);
 
 		// secondoEvento.setLocation(secondaLocation);

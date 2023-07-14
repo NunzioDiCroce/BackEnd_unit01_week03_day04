@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class GaraDiAtletica extends Evento {
@@ -14,6 +15,8 @@ public class GaraDiAtletica extends Evento {
 	@JoinTable(name = "GaraDiAtletica_Persona", joinColumns = @JoinColumn(name = "GaraDiAtletica_id"), inverseJoinColumns = @JoinColumn(name = "Persona_id"))
 	private Set<Persona> setAtleti;
 
+	@ManyToOne
+	@JoinColumn(name = "GaraDiAtletica_id", referencedColumnName = "id")
 	private Persona vincitore;
 
 	public GaraDiAtletica() {
