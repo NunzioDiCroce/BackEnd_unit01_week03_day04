@@ -24,6 +24,10 @@ public class GaraDiAtletica extends Evento {
 	}
 
 	public GaraDiAtletica(Set<Persona> _setAtleti, Persona _vincitore) {
+		// super(titolo, dataEvento, descrizione, tipoEvento,
+		// numeroMassimoPartecipanti);
+		this.setAtleti = _setAtleti;
+		this.vincitore = _vincitore;
 
 	}
 

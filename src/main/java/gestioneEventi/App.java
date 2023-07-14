@@ -21,6 +21,8 @@ public class App {
 
 		// - - - - - - - - - - - - - - - - - - - - OBJECTS CREATION
 
+		Concerto primoConcerto = new Concerto(Genere.CLASSICO, true);
+
 		Evento primoEvento = new Evento(1, "primoEvento", LocalDate.of(2023, 7, 1), "primaDescrizione",
 				TipoEvento.PRIVATO, 100);
 
@@ -29,6 +31,8 @@ public class App {
 
 		Evento terzoEvento = new Evento(3, "terzoEvento", LocalDate.of(2023, 7, 1), "terzaDescrizione",
 				TipoEvento.PUBBLICO, 1000);
+
+		GaraDiAtletica primaGaraDiAtletica = new GaraDiAtletica();
 
 		Partecipazione primaPartecipazione = new Partecipazione(1, Stato.CONFERMATA);
 		Partecipazione secondaPartecipazione = new Partecipazione(2, Stato.CONFERMATA);
@@ -48,22 +52,23 @@ public class App {
 				LocalDate.of(1990, 8, 1), Sesso.MASCHIO);
 
 		// - - - - - - - - - - - - - - - - - - - - DAO OBJECT CREATION
+		ConcertoDAO concertoDao = new ConcertoDAO(entityManager);
 		EventoDAO eventoDao = new EventoDAO(entityManager);
+		GaraDiAtleticaDAO garaDiAtleticaDao = new GaraDiAtleticaDAO(entityManager);
+
 		PartecipazioneDAO partecipazioneDao = new PartecipazioneDAO(entityManager);
 		LocationDAO locationDao = new LocationDAO(entityManager);
 		PersonaDAO personaDao = new PersonaDAO(entityManager);
 
 		// - - - - - - - - - - - - - - - - - - - - SETTING & SAVING
 
+		// concertoDao.save(primoConcerto);
+		// primoConcerto.setGenere(Genere.CLASSICO);
+
 		// primoEvento.setLocation(primaLocation);
-		eventoDao.save(primoEvento);
+		// eventoDao.save(primoEvento);
 
-		// secondoEvento.setLocation(secondaLocation);
-		// eventoDao.save(secondoEvento);
-
-		// terzoEvento.setLocation(terzaLocation);
-		// eventoDao.save(terzoEvento);
-
+		garaDiAtleticaDao.save(primaGaraDiAtletica);
 		// personaDao.save(primaPersona);
 		// personaDao.save(secondaPersona);
 		// personaDao.save(terzaPersona);

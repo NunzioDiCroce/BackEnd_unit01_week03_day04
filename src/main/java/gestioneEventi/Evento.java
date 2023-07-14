@@ -28,7 +28,7 @@ public class Evento {
 	private LocalDate dataEvento;
 	private String descrizione;
 
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.ORDINAL)
 	private TipoEvento tipoEvento;
 
 	private int numeroMassimoPartecipanti;
